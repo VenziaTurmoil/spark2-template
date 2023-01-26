@@ -165,7 +165,6 @@ object examples {
       .select(explode($"tourTags").as("tag"), $"tourDifficulty")
       .groupBy("tag", "tourDifficulty")
       .count().as("count")
-      .orderBy($"count".desc)
 
     val tag10_difficulty = tags10
       .join(tags_difficulty,
